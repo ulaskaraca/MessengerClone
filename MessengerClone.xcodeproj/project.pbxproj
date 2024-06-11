@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184140B62C1821270077A6E0 /* InboxRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184140B52C1821270077A6E0 /* InboxRowView.swift */; };
 		18B850872C0C6C6B009DF643 /* MessengerCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B850862C0C6C6B009DF643 /* MessengerCloneApp.swift */; };
 		18B850892C0C6C6B009DF643 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B850882C0C6C6B009DF643 /* LoginView.swift */; };
 		18B8508B2C0C6C6C009DF643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B8508A2C0C6C6C009DF643 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		184140B52C1821270077A6E0 /* InboxRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxRowView.swift; sourceTree = "<group>"; };
 		18B850832C0C6C6B009DF643 /* MessengerClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessengerClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B850862C0C6C6B009DF643 /* MessengerCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerCloneApp.swift; sourceTree = "<group>"; };
 		18B850882C0C6C6B009DF643 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				18B8509A2C0C8A93009DF643 /* InboxView.swift */,
+				184140B52C1821270077A6E0 /* InboxRowView.swift */,
 				18B8509D2C0C8F0C009DF643 /* NowActiveView.swift */,
 			);
 			path = Inbox;
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184140B62C1821270077A6E0 /* InboxRowView.swift in Sources */,
 				18B850982C0C76FC009DF643 /* SignupView.swift in Sources */,
 				18B8509B2C0C8A93009DF643 /* InboxView.swift in Sources */,
 				18B850A92C0CA9A8009DF643 /* ContentView.swift in Sources */,
