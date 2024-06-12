@@ -10,6 +10,7 @@ import SwiftUI
 struct InboxView: View {
     @State private var showNewMessageView = false
     @State private var showProfileView = false
+    @State private var showChatView = false
     
     var body: some View {
         
@@ -21,6 +22,12 @@ struct InboxView: View {
                     ForEach(0 ... 10, id: \.self){message in
                         InboxRowView()
                     }
+                    .onTapGesture {
+                        showChatView.toggle()
+                    }
+                    .fullScreenCover(isPresented: $showChatView, content: {
+                        ChatView()
+                    })
                 }
                 .listStyle(PlainListStyle())
                 .frame(height: UIScreen.main.bounds.height - 120)
