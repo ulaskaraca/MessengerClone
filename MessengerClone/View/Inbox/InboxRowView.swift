@@ -23,7 +23,7 @@ struct InboxRowView: View {
                 Text("Bu son mesajın bir kopyasıdır")
                     .font(.subheadline)
                     .foregroundColor(.gray)
-                    .lineLimit(2)
+                    .lineLimit(1)
                     .frame(maxWidth: UIScreen.main.bounds.width - 100, alignment: .leading)
             }
             HStack{

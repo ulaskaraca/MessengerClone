@@ -45,16 +45,7 @@ struct SignupView: View {
                 .padding(.horizontal, 24)
             
             Button("Sign Up"){
-                if(email != "" && password != "" && fullname != ""){
-                    Auth.auth().createUser(withEmail: email, password: password) { result, error in
-                        if(error == nil){
-                            print("Register successful")
-                            
-                        }else{
-                            print(error as Any)
-                        }
-                    }
-                }
+                AuthServices().signUp(email, password, fullname)
             }
             .font(.subheadline)
             .fontWeight(.semibold)

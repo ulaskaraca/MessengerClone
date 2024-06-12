@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InboxView: View {
     @State private var showNewMessageView = false
+    @State private var showProfileView = false
     
     var body: some View {
         
@@ -26,14 +27,22 @@ struct InboxView: View {
                 
             }
             .fullScreenCover(isPresented: $showNewMessageView, content: {
-                NavigationStack{
-                    NewMessageView()
-                }
+                NewMessageView()
             })
             .toolbar{
                 ToolbarItem(placement: .topBarLeading){
                     HStack{
-                        Image(systemName: "person.circle.fill")
+                        Button{
+                            showProfileView.toggle()
+                        } label: {
+                            Image(systemName: "person.circle.fill")
+                                .resizable()
+                                .frame(width: 32, height: 32)
+                                .foregroundColor(.black)
+                        }.fullScreenCover(isPresented: $showProfileView, content: {
+                            ProfileView()
+                        })
+                        
                         Text("Chats")
                             .font(.title)
                             .fontWeight(.semibold)

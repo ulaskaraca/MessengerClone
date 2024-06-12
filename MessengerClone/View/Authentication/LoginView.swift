@@ -12,6 +12,8 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @State var navigated = false
+    @State var loginFlag = false
+    @State var signUpFlag = false
     
     var body: some View {
         NavigationStack{
@@ -48,17 +50,7 @@ struct LoginView: View {
                 
                 
                 Button("Login"){
-                    if(email != "" && password != ""){
-                        Auth.auth().signIn(withEmail: email, password: password) { result, error in
-                            if(error == nil){
-                                print("Log in successful")
-                                
-                            }
-                            else{
-                                print(error as Any)
-                            }
-                        }
-                    }
+                    AuthServices().login(email, password)
                 }
                 .font(.subheadline)
                 .fontWeight(.semibold)
