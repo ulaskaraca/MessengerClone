@@ -9,8 +9,7 @@ import SwiftUI
 import Firebase
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
+    @StateObject var viewModel = LoginViewModel()
     @State var navigated = false
     @State var loginFlag = false
     @State var signUpFlag = false
@@ -20,19 +19,24 @@ struct LoginView: View {
             VStack {
                 Spacer()
                 Image("messenger")
-                    .imageScale(.large)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.bottom)
+                    .frame(width: 200, height: 200)
                     .foregroundStyle(.tint)
                 
-                TextField("Enter your email", text: $email)
+                TextField("Enter your email", text: $viewModel.email)
                     .font(.subheadline)
                     .padding(12)
+                    .textInputAutocapitalization(.never)
                     .background(Color(.systemGray6))
                     .cornerRadius(10)
                     .padding(.horizontal, 24)
                 
-                SecureField("Enter your password", text: $password)
+                SecureField("Enter your password", text: $viewModel.password)
                     .font(.subheadline)
                     .padding(12)
+                    .textInputAutocapitalization(.never)
                     .background(Color(.systemGray6))
                     .cornerRadius(12)
                     .padding(.horizontal, 24)
@@ -50,7 +54,7 @@ struct LoginView: View {
                 
                 
                 Button("Login"){
-                    AuthServices().login(email, password)
+                    Task{try await viewModel.signin()}
                 }
                 .font(.subheadline)
                 .fontWeight(.semibold)

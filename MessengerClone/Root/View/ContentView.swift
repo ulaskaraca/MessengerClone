@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = AuthService()
+    @StateObject var viewModel = ContentViewModel()
     
     var body: some View {
         Group{

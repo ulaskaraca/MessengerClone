@@ -9,9 +9,7 @@ import SwiftUI
 import Firebase
 
 struct SignupView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @State private var fullname = ""
+    @StateObject var viewModel = SignUpViewModel()
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -20,32 +18,35 @@ struct SignupView: View {
             Image("messenger")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 150, height: 150)
+                .padding(.bottom)
+                .frame(width: 200, height: 200)
                 .padding()
             
-            TextField("Enter your email", text:$email)
+            TextField("Enter your email", text:$viewModel.email)
+                .font(.subheadline)
+                .padding(12)
+                .textInputAutocapitalization(.never)
+                .background(Color(.systemGray6))
+                .cornerRadius(10)
+                .padding(.horizontal, 24)
+            
+            TextField("Enter your full name", text:$viewModel.fullname)
                 .font(.subheadline)
                 .padding(12)
                 .background(Color(.systemGray6))
                 .cornerRadius(10)
                 .padding(.horizontal, 24)
             
-            TextField("Enter your full name", text:$fullname)
+            SecureField("Enter your password", text:$viewModel.password)
                 .font(.subheadline)
                 .padding(12)
-                .background(Color(.systemGray6))
-                .cornerRadius(10)
-                .padding(.horizontal, 24)
-            
-            SecureField("Enter your password", text:$password)
-                .font(.subheadline)
-                .padding(12)
+                .textInputAutocapitalization(.never)
                 .background(Color(.systemGray6))
                 .cornerRadius(10)
                 .padding(.horizontal, 24)
             
             Button("Sign Up"){
-                AuthServices().signUp(email, password, fullname)
+                Task{try await viewModel.createUser()}
             }
             .font(.subheadline)
             .fontWeight(.semibold)
