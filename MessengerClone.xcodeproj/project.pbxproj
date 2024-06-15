@@ -23,6 +23,7 @@
 		1871F2372C1DB19800F0E75A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871F2362C1DB19800F0E75A /* User.swift */; };
 		1871F23B2C1DBA9300F0E75A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871F23A2C1DBA9300F0E75A /* UserService.swift */; };
 		1871F23F2C1DBE7F00F0E75A /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871F23E2C1DBE7F00F0E75A /* InboxViewModel.swift */; };
+		1871F2432C1DEE1800F0E75A /* NewMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871F2422C1DEE1800F0E75A /* NewMessageViewModel.swift */; };
 		18B850872C0C6C6B009DF643 /* MessengerCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B850862C0C6C6B009DF643 /* MessengerCloneApp.swift */; };
 		18B850892C0C6C6B009DF643 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B850882C0C6C6B009DF643 /* LoginView.swift */; };
 		18B8508B2C0C6C6C009DF643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B8508A2C0C6C6C009DF643 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		1871F2362C1DB19800F0E75A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1871F23A2C1DBA9300F0E75A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		1871F23E2C1DBE7F00F0E75A /* InboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
+		1871F2422C1DEE1800F0E75A /* NewMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewModel.swift; sourceTree = "<group>"; };
 		18B850832C0C6C6B009DF643 /* MessengerClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessengerClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B850862C0C6C6B009DF643 /* MessengerCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerCloneApp.swift; sourceTree = "<group>"; };
 		18B850882C0C6C6B009DF643 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -83,7 +85,8 @@
 		184140B72C18279B0077A6E0 /* NewMessage */ = {
 			isa = PBXGroup;
 			children = (
-				184140B82C1827B60077A6E0 /* NewMessageView.swift */,
+				1871F2402C1DEDF400F0E75A /* Views */,
+				1871F2412C1DEDFC00F0E75A /* ViewModel */,
 			);
 			path = NewMessage;
 			sourceTree = "<group>";
@@ -170,6 +173,22 @@
 			isa = PBXGroup;
 			children = (
 				1871F23E2C1DBE7F00F0E75A /* InboxViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1871F2402C1DEDF400F0E75A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				184140B82C1827B60077A6E0 /* NewMessageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1871F2412C1DEDFC00F0E75A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1871F2422C1DEE1800F0E75A /* NewMessageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -358,6 +377,7 @@
 				1871F23F2C1DBE7F00F0E75A /* InboxViewModel.swift in Sources */,
 				18B850A72C0CA11B009DF643 /* AuthService.swift in Sources */,
 				184140BE2C184FBC0077A6E0 /* SettingsViewModel.swift in Sources */,
+				1871F2432C1DEE1800F0E75A /* NewMessageViewModel.swift in Sources */,
 				18B850872C0C6C6B009DF643 /* MessengerCloneApp.swift in Sources */,
 				1870F3E42C1B3653004E830F /* RegistrationViewModel.swift in Sources */,
 				1871F23B2C1DBA9300F0E75A /* UserService.swift in Sources */,
