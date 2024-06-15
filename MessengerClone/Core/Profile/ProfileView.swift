@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel = InboxViewModel()
     
     var body: some View {
         NavigationStack {
@@ -18,7 +19,7 @@ struct ProfileView: View {
                         .resizable()
                         .frame(width: 80, height: 80)
                         .foregroundColor(Color(.systemGray4))
-                    Text("Bruce Wayne")
+                    Text(viewModel.currentUser?.fullname ?? "Anonymus")
                         .font(.title2)
                         .fontWeight(.semibold)
                 }

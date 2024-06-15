@@ -11,6 +11,7 @@ struct InboxView: View {
     @State private var showNewMessageView = false
     @State private var showProfileView = false
     @State private var showChatView = false
+    @StateObject var viewModel = InboxViewModel()
     
     var body: some View {
         
