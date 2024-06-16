@@ -12,9 +12,13 @@ struct InboxView: View {
     @State private var showProfileView = false
     @State private var showChatView = false
     @StateObject var viewModel = InboxViewModel()
+    @State private var selectedUser: User?
+    
+    private var user: User?{
+        return viewModel.currentUser
+    }
     
     var body: some View {
-        
         NavigationStack{
             ScrollView{
                 NowActiveView()
@@ -26,16 +30,26 @@ struct InboxView: View {
                     .onTapGesture {
                         showChatView.toggle()
                     }
-                    .fullScreenCover(isPresented: $showChatView, content: {
-                        ChatView()
-                    })
+                
                 }
                 .listStyle(PlainListStyle())
                 .frame(height: UIScreen.main.bounds.height - 120)
                 
             }
+            .onChange(of: selectedUser, perform: {newValue in
+                showChatView = newValue != nil
+            })
+            .navigationDestination(for: User.self, destination: {user in
+                ProfileView()
+            })
+            .navigationDestination(isPresented: $showChatView, destination: {
+                if let user = selectedUser{
+                    ChatView(user: user)
+                }
+            })
+            
             .fullScreenCover(isPresented: $showNewMessageView, content: {
-                NewMessageView()
+                NewMessageView(selectedUser: $selectedUser)
             })
             .toolbar{
                 ToolbarItem(placement: .topBarLeading){

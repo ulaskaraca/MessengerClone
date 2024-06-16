@@ -10,6 +10,7 @@ import SwiftUI
 struct ChatView: View {
     @State private var field = ""
     @Environment(\.dismiss) var dismiss
+    let user: User
     
     var body: some View {
         NavigationStack{
@@ -19,7 +20,7 @@ struct ChatView: View {
                         .resizable()
                         .frame(width: 62, height: 62)
                         .foregroundColor(Color(.systemGray4))
-                    Text("Heath Ledger")
+                    Text(user.fullname)
                         .font(.title3)
                         .fontWeight(.semibold)
                     Text("Messenger")
@@ -61,6 +62,6 @@ struct ChatView: View {
 
 #Preview {
     NavigationStack{
-        ChatView()
+        ChatView(user: User.MOCK_USER)
     }
 }
