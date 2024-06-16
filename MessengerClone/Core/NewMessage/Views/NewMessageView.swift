@@ -25,6 +25,7 @@ struct NewMessageView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
                 
+             
                 ForEach(viewModel.users){user in
                     VStack{
                         HStack{
